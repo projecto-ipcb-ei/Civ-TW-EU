@@ -33,12 +33,12 @@ public class CameraManager : MonoBehaviour
         //Parametro com out e uma variavel com apontador
         if(Physics.Raycast(r, out hitInfo)){
             //Guarda Objecto e atributos
-            GameObject objHit = hitInfo.collider.transform.parent.gameObject;
+            GameObject objHit = hitInfo.collider.transform.gameObject;
 
             //Neste caso, o nosso mar, tem 2 componentes
             //Entao queremos o objeto na hierarquia superior
-            if (objHit.name == "HexTile_Water")
-                objHit = hitInfo.collider.transform.parent.parent.gameObject;
+            if (objHit.tag == "Base Terrain")
+                objHit = hitInfo.collider.transform.parent.gameObject;
 
             //Teste na consola, para mostrar, o nome do tile, onde tem posicao
             Debug.Log("Raio atingiu: " + objHit.name);
