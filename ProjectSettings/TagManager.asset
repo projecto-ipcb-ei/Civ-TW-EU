@@ -9,7 +9,6 @@ TagManager:
   - Unit
   - Coordenates
   - Map
-  - UI
   layers:
   - Default
   - TransparentFX
