@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems; //Necessario para UI, eventos, entre outros
 
-public class CameraManager : MonoBehaviour
-{
+public class CameraManager : MonoBehaviour{
     // Start is called before the first frame update
     void Start(){
         
@@ -20,7 +19,7 @@ public class CameraManager : MonoBehaviour
         }
 
         //Teste na consola, para mostrar posicao do rato (pelo ecra)
-        Debug.Log("Posicao do rato: " + Input.mousePosition);
+        //Debug.Log("Posicao do rato: " + Input.mousePosition);
 
         //Teste para posicao do rato (pelos tiles)
         Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -38,7 +37,7 @@ public class CameraManager : MonoBehaviour
             //Neste caso, o nosso mar, tem 2 componentes
             //Entao queremos o objeto na hierarquia superior
             if (objHit.tag == "Base Terrain")
-                objHit = hitInfo.collider.transform.parent.gameObject;
+                objHit = hitInfo.collider.transform.gameObject;
 
             //Teste na consola, para mostrar, o nome do tile, onde tem posicao
             Debug.Log("Raio atingiu: " + objHit.name);

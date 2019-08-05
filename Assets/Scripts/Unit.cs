@@ -22,8 +22,9 @@ public class Unit : MonoBehaviour{
         //Senao ira sair "disparado"
         vel = Vector3.ClampMagnitude(vel, dir.magnitude);
 
+        //TODO: Esta a criar jibber (pequenos saltos, collider, rigidbody e gravidade)
         //Move a unidade
-        //Esta a criar jibber (pequenos saltos, collider, rigidbody e gravidade)
+        //FIX?
         transform.Translate(vel);
     }
 }

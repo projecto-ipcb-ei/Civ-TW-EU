@@ -2,11 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//TODO: Guardar posicao e tipo de tile, saber vizinhanca(?)
+//Possivel meter em "fogo" quando invadido
+//Ou outros efeitos em outras situacoes
 public class Hex : MonoBehaviour{
 
     //Coordenadas do Objecto
     public int x;
-    public int y;  
+    public int y;
+    public int type;
+
+    public Hex(int col, int row, int type){
+        x = col;
+        y = row;
+        this.type = type;
+    }
 
     public Hex[] getVizinhos(){
 
@@ -23,5 +34,13 @@ public class Hex : MonoBehaviour{
         //x-1,x ou x,x+1
 
         return null;
+    }
+
+    public void setTerrain(int type){
+        this.type = type;
+    }
+
+    public int getTerrain(){
+        return type;
     }
 }
