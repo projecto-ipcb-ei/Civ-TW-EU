@@ -3,13 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Map_Continents : Map{
-    // Start is called before the first frame update
-    void Start(){
-        
+
+    override public void GenerateMap(){
+        //Corre o GenerateMap da class Map
+        base.GenerateMap();
+
+        //Corre novo metodo que ira criar um mapa tipo Pangea
+        GenerateContinents(20, 20, 5);
+
+        //Atualiza mapa
+        UpdateMap();
     }
 
-    // Update is called once per frame
-    void Update(){
-        
+    void GenerateContinents(int x, int y, int reach){
+
+        Hex iniCoordenate = GetHex(x, y);
+
+        Hex[] newTiles = GetConjHex(iniCoordenate, reach);
+
+        foreach(Hex h in newTiles){
+            h.SetTerrain(4);
+        }
     }
 }

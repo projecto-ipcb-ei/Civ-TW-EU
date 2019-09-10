@@ -13,10 +13,10 @@ public class Hex : MonoBehaviour{
     public int y;
     public int type;
 
-    public Hex(int col, int row, int type){
+    public Hex(int col, int row){
         x = col;
         y = row;
-        this.type = type;
+        type = 7;
     }
 
     public Hex[] getVizinhos(){
@@ -36,11 +36,11 @@ public class Hex : MonoBehaviour{
         return null;
     }
 
-    public void setTerrain(int type){
+    public void SetTerrain(int type){
         this.type = type;
     }
 
-    public int getTerrain(){
+    public int GetTerrain(){
         return type;
     }
 }

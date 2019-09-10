@@ -27,7 +27,7 @@ public class Map_Random : Map{
                 int tile = UnityEngine.Random.Range(0, terrainHex.Length);
 
                 //Cria obj Hex
-                Hex h = new Hex(col, row, tile);
+                Hex h = new Hex(col, row);
 
                 //Guarda a Info
                 hexInfo[col, row] = h;
